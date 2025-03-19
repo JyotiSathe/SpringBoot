@@ -10,10 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/customers")
@@ -49,4 +48,55 @@ public class CustomerController {
                     .body(new GenericResponse<>("Customer not added"));
         }
     }
+
+    @GetMapping("/v1.0")
+    public List<Customer> fetchAllCustomers() {
+        return this.customerService.getAllCustomers();
+    }
+
+    @GetMapping("/v1.0/{customerId}")
+    public Customer fetchCustomerById(@PathVariable("customerId") long customerId) {
+        return this.customerService.getCustomerById(customerId);
+    }
+
+    @GetMapping("/v1.0/byContactNumber/{contactNumber}")
+    public List<Customer> fetchCustomerByContactNumber(@PathVariable("contactNumber") String contactNumber) {
+        return this.customerService.getCustomerByContactNumber(contactNumber);
+    }
+
+    @PutMapping("v1.0")
+    public ResponseEntity<GenericResponse> updateCustomerEmail(@RequestParam("customerId") long customerId, @RequestParam("email") String email) {
+        Customer customer = this.customerService.updateCustomerEmail(customerId, email);
+        if (customer != null) {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(new GenericResponse<>(customer));
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new GenericResponse<>("Customer email not updated"));
+        }
+    }
+
+    @PutMapping("v1.0")
+    public ResponseEntity<GenericResponse> updateCustomerContactNumber(@RequestParam("customerId") long customerId, @RequestParam("contactNumber") String contactNumber) {
+        Customer customer = this.customerService.updateCustomerContactNo(customerId, contactNumber);
+        if (customer != null) {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(new GenericResponse<>(customer));
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new GenericResponse<>("Customer contact number not updated"));
+        }
+    }
+
+    @DeleteMapping("/v1.0/{customerId}")
+    public ResponseEntity<GenericResponse> deleteCustomerById (@PathVariable("customerId") long customerId) {
+        if(this.customerService.deleteCustomer(customerId)) {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(new GenericResponse<>("Customer deleted."));
+        } else {
+         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                 .body(new GenericResponse<>("Customer not deleted."));
+        }
+    }
+
 }

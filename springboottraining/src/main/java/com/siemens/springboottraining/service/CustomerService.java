@@ -26,14 +26,14 @@ public class CustomerService implements ICustomerService {
     @Override
     public Customer updateCustomerEmail(long customerId, String email) {
         Customer customer = this.getCustomerById(customerId);
-//        customer.setEmail(email);
+        customer.setEmail(email);
         return this.customerRepository.save(customer);
     }
 
     @Override
     public Customer updateCustomerContactNo(long customerId, String contactNo) {
         Customer customer = this.getCustomerById(customerId);
-//        customer.setContactNumber(contactNo);
+        customer.setContactNumber(contactNo);
         return this.customerRepository.save(customer);
     }
 
