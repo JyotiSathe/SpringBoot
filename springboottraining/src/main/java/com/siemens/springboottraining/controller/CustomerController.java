@@ -33,6 +33,8 @@ public class CustomerController {
                 .customerId(customerRequest.getCustomerId())
                 .fullName(FullName.builder()
                         .firstName(customerRequest.getFullName().getFirstName())
+                        .middleName(customerRequest.getFullName().getMiddleName())
+                        .lastName(customerRequest.getFullName().getLastName())
                         .build())
                 .contactNumber(customerRequest.getContactNumber())
                 .email(customerRequest.getEmail())
