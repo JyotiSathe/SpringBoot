@@ -64,7 +64,7 @@ public class CustomerController {
         return this.customerService.getCustomerByContactNumber(contactNumber);
     }
 
-    @PutMapping("v1.0")
+    @PutMapping("/v1.0")
     public ResponseEntity<GenericResponse> updateCustomerEmail(@RequestParam("customerId") long customerId, @RequestParam("email") String email) {
         Customer customer = this.customerService.updateCustomerEmail(customerId, email);
         if (customer != null) {
@@ -76,7 +76,7 @@ public class CustomerController {
         }
     }
 
-    @PutMapping("v1.0")
+    @PutMapping("/v1.0/updateContact")
     public ResponseEntity<GenericResponse> updateCustomerContactNumber(@RequestParam("customerId") long customerId, @RequestParam("contactNumber") String contactNumber) {
         Customer customer = this.customerService.updateCustomerContactNo(customerId, contactNumber);
         if (customer != null) {
