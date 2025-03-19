@@ -16,7 +16,6 @@ import lombok.experimental.SuperBuilder;
 @Entity
 public class Corporate extends Customer {
 
-
     @Enumerated(EnumType.STRING)
     @Column(name = "CompanyType")
     private CompanyType companyType;
