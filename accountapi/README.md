@@ -34,6 +34,12 @@ Spring Boot Training
 ### Step 1: create new git repo with all properties file (files from [db-config-files](db-config-files)) as per environment
 ### Step 2: create `siemensdevaccountdb`, `siemensprodaccountdb`, `siemensqaaccountdb`, `siemenstestaccountdb` schemas in mysql workbench
 
+# Config Server Setup
+### another repo configserverdemo
+
+# Enable vault communication
+### Step 1: bootstrap.properties
+- update vault token as per `root_token`
 
 #
 
