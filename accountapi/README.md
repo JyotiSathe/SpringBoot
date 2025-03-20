@@ -31,7 +31,9 @@ Spring Boot Training
 - Password -> `MYSQL DB password`
 
 # DB steps
-## created new git repo with all properties file (files from [db-config-files](db-config-files)) as per environment
+### Step 1: create new git repo with all properties file (files from [db-config-files](db-config-files)) as per environment
+### Step 2: create `siemensdevaccountdb`, `siemensprodaccountdb`, `siemensqaaccountdb`, `siemenstestaccountdb` schemas in mysql workbench
+
 
 #
 
