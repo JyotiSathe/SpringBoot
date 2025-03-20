@@ -25,6 +25,11 @@ Spring Boot Training
 
 ### Reload vault server UI `http://localhost:8200/ui/vault/dashboard` and pass `root_token` again.
 
+### Create secrete from Secret Engines
+Path -> mysqlsecret
+Username -> root
+Password -> `MYSQL DB password`
+
 #
 
 # Future
