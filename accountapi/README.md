@@ -8,6 +8,7 @@ Spring Boot Training
 
 ## Start vault server
 ### Step1: vault server --config=vault.conf
+C:\Users\User\Downloads\vault_1.19.0_windows_amd64>vault server --config=vault.conf
 - Access vault server on Chrome 
   http://localhost:8200/ui/vault/init
 - Set Key Shares as 5, Key Threshold as 2 INITIALIZE
