@@ -1,0 +1,6 @@
+URLs:
+
+https://developer.hashicorp.com/vault/install
+http://localhost:7072/explorer/index.html#theme=Darkly&uri=/
+http://localhost:8200/ui/vault/secrets/secret/show/mysqlsecret
+http://localhost:8761/
