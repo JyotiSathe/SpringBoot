@@ -30,6 +30,9 @@ Spring Boot Training
 - Username -> root
 - Password -> `MYSQL DB password`
 
+# DB steps
+## created new git repo with all properties file (files from [db-config-files](db-config-files)) as per environment
+
 #
 
 # Future
