@@ -1,5 +1,6 @@
 package com.siemens.accountapi.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,7 +16,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode(callSuper = false)
 public class Account {
 
-
+    @Schema(hidden = true)
     protected long accountNumber;
 
     protected long runningTotal;
