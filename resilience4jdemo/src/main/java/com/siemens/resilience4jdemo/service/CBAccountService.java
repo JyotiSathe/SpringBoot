@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Service
 @Slf4j
@@ -30,7 +30,7 @@ public class CBAccountService {
     @CircuitBreaker(name = "gatewayCircuitBreaker", fallbackMethod = "callCBFallbackAccountService")
     @Retry(name = "gatewayRetry")
     public String callCBAccountService() {
-        log.info("Entering Primary method @=" + LocalDate.now());
+        log.info("Entering Primary method @=" + LocalDateTime.now());
         return restClient.get()
                 .uri(serviceUrl)
                 .header("Accept", "application/json")
@@ -39,7 +39,7 @@ public class CBAccountService {
     }
 
     public String callCBFallbackAccountService(Exception e) {
-        log.info("Entering Fallback method @=" + LocalDate.now());
+        log.info("Entering Fallback method @=" + LocalDateTime.now() + e.getMessage());
         return restClient.get()
                 .uri(alternativeServiceUrl)
                 .retrieve()
