@@ -1,7 +1,7 @@
 URLs:
 
-https://developer.hashicorp.com/vault/install
-http://localhost:7072/explorer/index.html#theme=Darkly&uri=/
-http://localhost:8200/ui/vault/secrets/secret/show/mysqlsecret
-http://localhost:8761/
-http://localhost:7072/swagger-ui/index.html
+Vault : https://developer.hashicorp.com/vault/install
+HAL explorer : http://localhost:7072/explorer/index.html#theme=Darkly&uri=/
+Vault Server : http://localhost:8200/ui/vault/secrets/secret/show/mysqlsecret
+Eureka Server : http://localhost:8761/
+Application Swagger : http://localhost:7072/swagger-ui/index.html
