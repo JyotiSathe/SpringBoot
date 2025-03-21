@@ -6,3 +6,6 @@ Vault Server : http://localhost:8200/ui/vault/secrets/secret/show/mysqlsecret
 Eureka Server : http://localhost:8761/
 Application Swagger : http://localhost:7072/swagger-ui/index.html
 API Gateway : http://localhost:8765/accounts/v1.0
+https://jsonplaceholder.typicode.com/users
+https://restcountries.com/v2/all
+https://resilience4j.readme.io/docs/getting-started
