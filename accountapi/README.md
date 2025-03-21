@@ -26,10 +26,13 @@ C:\Users\User\Downloads\vault_1.19.0_windows_amd64>vault server --config=vault.c
 
 ### Reload vault server UI `http://localhost:8200/ui/vault/dashboard` and pass `root_token` again.
 
-### Create secrete from Secret Engines
+### Step 5: Create secrete from Secret Engines
 - Path -> mysqlsecret
 - Username -> root
 - Password -> `MYSQL DB password`
+
+If this is not working create secret using below steps:
+vault kv put secret/mysqlsecret mysqlusername=root password=Cloud@123$
 
 # DB steps
 ### Step 1: create new git repo with all properties file (files from [db-config-files](db-config-files)) as per environment

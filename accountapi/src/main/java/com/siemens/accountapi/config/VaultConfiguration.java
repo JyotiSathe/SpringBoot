@@ -11,6 +11,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties
 public class VaultConfiguration {
 
-    private String username;
+    private String mysqlusername;
     private String password;
 }
