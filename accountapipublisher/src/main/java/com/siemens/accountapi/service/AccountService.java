@@ -30,6 +30,7 @@ public class AccountService implements IAccountService {
     public CompletableFuture<SendResult<Object, Object>> publishAccountDetails(Account account) throws JsonProcessingException {
         Faker faker = new Faker();
         account.setAccountNumber(faker.number().numberBetween(100000L, 999999L));
+        account.setOpenDate(faker.date().birthday().toString());
 
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = ow.writeValueAsString(account);
